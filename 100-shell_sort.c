@@ -23,7 +23,7 @@ void swap(int *array, int a, int b)
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t gap = 1, i, ind = 0;
+	size_t gap = 1, i, j = 0;
 
 	if (!array || !size)
 		return;
@@ -32,9 +32,9 @@ void shell_sort(int *array, size_t size)
 	while (gap >= 1)
 	{
 		for (i = gap; i < size; i++)
-			for (ind = i; ind >= gap &&
-			 (array[ind] < array[ind - gap]); ind -= gap)
-				swap(array, ind, ind - gap);
+			for (j = i; j > gap - 1 &&
+			 (array[j] < array[j - gap]); j -= gap)
+				swap(array, j, j - gap);
 		print_array(array, size);
 		gap /= 3;
 	}
