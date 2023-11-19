@@ -1,4 +1,5 @@
 #include "sort.h"
+
 /**
 * swap - the positions of two elements into an array
 * @array: array of integer to sort
@@ -13,6 +14,7 @@ void swap(int *array, int a, int b)
 	array[a] = array[b];
 	array[b] = temp;
 }
+
 /**
  * shell_sort - function that sorts an array of integers in ascending
  *              order using the Shell sort algorithm, using the Knuth sequence
